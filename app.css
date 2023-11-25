@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navigation {
+    background-color: #1C181D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    width: 100%;
+    height: 55px;
+    color: #E3E3E3;
+}
+
+
+.logo-mobile {
+    display: none;
+}
+
+
+.search-box {
+    display: flex;
+    padding: 8px;
+    width: 480px;
+    border: 1px solid #616161;
+    /* border-color: #EBEBEB; */
+    outline: none;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #322F33;
+    /* justify-content: center; */
+    gap: 6px;
+}
+
+.search-button, .notif-button {
+    background-color: transparent;
+    color: #B5B5B5;
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 140%;
+    /* outline: none;
+    border: none; */
+}
+
+.search-button svg {
+    fill: #B5B5B5;
+    height: 1.1em;
+    width: 1.1em;
+    flex-shrink: 0;
+  }
+
+.search-box:hover {
+    border: 2px solid #F7F7F7;
+}
+
+/* .search-box:focus {
+    border: 3px solid #F0F0F0;
+} */
+
+.search {
+    background-color: transparent;
+    color: #E3E3E3;
+    outline: none;
+    border: none;
+    width: 100%;
+    text-decoration: none;
+    padding: 1px;
+    
+}
+
+.notif_user {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notif-button {
+    background-color: #322F33;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.notif-button svg {
+    fill: #B5B5B5;
+    height: 23px;
+    width: 23px;
+    flex-shrink: 0;
+}
+
+.user {
+    display: flex;
+    padding: 3px 2px 2px 8px;
+    align-items: center;
+    gap: 8px;
+    background-color: #322F33;
+    border-radius: 8px;
+}
+
+.userName-button {
+    background-color: #36FBA1;
+    display: flex;
+    height: 28px;
+    padding: 9px 5px 10px 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.userName-button h4 {
+    font-size: 12px;
+    line-height: 130%;
+    font-weight: 500;
+}

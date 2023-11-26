@@ -109,6 +109,10 @@ li {
     list-style-type: none;
 }
 
+.notif-button:hover {
+    background-color: #616161;
+}
+
 .notif-button svg {
     fill: #B5B5B5;
     height: 23px;
@@ -192,6 +196,8 @@ li {
     width: 100%;
 }
 
+
+
 /* USER MODAL */
 
 .user {
@@ -203,6 +209,10 @@ li {
     border-radius: 8px;
 }
 
+.user:hover {
+    background-color: #616161;
+}
+
 .nameofStore {
     display: flex;
     flex-direction: row;
@@ -211,6 +221,18 @@ li {
     gap: 7px;
     cursor: pointer;
 }
+
+.nameofStore:hover {
+    background-color: #616161;
+}
+
+.userName h4 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+}
+
 
 .userName-button {
     background-color: #36FBA1;
@@ -225,6 +247,8 @@ li {
     list-style-type: none;
     color: #616161;
     cursor: pointer;
+    font-size: 12px;
+    line-height: 130%;
 }
 
 .userName-button::-webkit-details-marker,
@@ -232,7 +256,7 @@ li {
     display: none;
 }
 
-.userName-button h4 {
+.userName-button1 h4 {
     font-size: 12px;
     line-height: 130%;
 }
@@ -311,6 +335,13 @@ li {
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.stores:hover {
+    background-color: #F7F7F7;
+    border-radius: 8px;
 }
 
 .stores a > li {
@@ -346,6 +377,12 @@ li {
   .navigation-setting li {
     list-style: none;
     cursor: pointer;
+    padding: 8px;
+  }
+
+  .navigation-setting li:hover {
+    background-color: #F7F7F7;
+    border-radius: 8px;
   }
 
 .options, .options1 {
@@ -382,7 +419,14 @@ li {
   .account-setting li {
     list-style: none;
     cursor: pointer;
+    padding: 8px;
   }
+
+  .account-setting li:hover {
+    background-color: #F7F7F7;
+    border-radius: 8px;
+  }
+
 
 .options1 {
     flex-direction: column;
@@ -406,6 +450,7 @@ li {
 .mainBody {
     display: flex;
     width: 100%;
+    height: auto;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -516,4 +561,89 @@ li {
 .control svg {
     width: 25px;
     height: 25px;
+}
+
+.details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 7px;
+    flex-direction: column;
+    padding: 5px 3px;
+}
+
+.details h6 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.details p {
+    word-spacing: 4px;
+    align-items: stretch;
+}
+
+
+    /* ACCORDION */
+.customize-segment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #F1F1F1;
+    padding: 8px;
+    border-radius: 12px;
+    margin-top: 8px;
+}
+
+.segment-head {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.segment-head svg {
+    width: 25px;
+    height: 25px;
+}
+
+.segment-body {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 30px;
+    /* align-items: flex-start; */
+    justify-content: center;
+}
+
+.left p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.customize-button {
+    display: flex;
+    padding: 9px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--White, #616161);
+    box-shadow: 0px 1px 0px 0px #B5B5B5 inset;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.right img {
+    object-fit: cover;
+    width: fit-content;
+    height: fit-content;
 }

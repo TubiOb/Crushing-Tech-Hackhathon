@@ -116,6 +116,11 @@ li {
     flex-shrink: 0;
 }
 
+.notif-button:hover svg {
+    stroke: #FFFFFF;
+    stroke-width: .6;
+} 
+
 
 /* NOTIFICATION MODAL */
 .notif-modal {
@@ -403,6 +408,7 @@ li {
     width: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .trialCallout {
@@ -450,10 +456,64 @@ li {
     border: none;
     right: 10px;
     cursor: pointer;
-    /* margin-left: auto; */
 }
 
 .cancel svg {
     width: 23px;
     height: 23px;
+}
+
+.cancel:hover svg {
+    stroke: #FFFFFF;
+    stroke-width: 1;
+} 
+
+
+    /* SETUP GUIDE ACCORDION */
+.setupGuide {
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px 8px 10px 8px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #475467;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.15);
+     
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.title h4 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.control {
+    display: flex;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: none;
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.control:hover {
+    background-color: #F1F1F1;
+}
+
+.control svg {
+    width: 25px;
+    height: 25px;
 }

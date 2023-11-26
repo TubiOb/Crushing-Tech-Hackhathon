@@ -8,6 +8,16 @@ body {
     font-family: sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+    /* NAVIGATION/NAVBAR */
 .navigation {
     background-color: #1C181D;
     display: flex;
@@ -19,6 +29,10 @@ body {
     color: #E3E3E3;
 }
 
+.logo-mobile, .logo {
+    cursor: pointer;
+}
+
 
 .logo-mobile {
     display: none;
@@ -28,7 +42,7 @@ body {
 .search-box {
     display: flex;
     padding: 8px;
-    width: 480px;
+    width: 35%;
     border: 1px solid #616161;
     /* border-color: #EBEBEB; */
     outline: none;
@@ -106,7 +120,7 @@ body {
 /* NOTIFICATION MODAL */
 .notif-modal {
     background-color: #FFFFFF;
-    box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.15);
     border-radius: 14px;
     position: absolute;
     right: 10px;
@@ -122,6 +136,7 @@ body {
     gap: 16px;
     border: 2px solid #F7F7F7;
     color: #475467;
+    z-index: 50;
 }
 
 .notif-button::-webkit-details-marker {
@@ -183,6 +198,15 @@ body {
     border-radius: 8px;
 }
 
+.nameofStore {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+    gap: 7px;
+    cursor: pointer;
+}
+
 .userName-button {
     background-color: #36FBA1;
     display: flex;
@@ -198,7 +222,8 @@ body {
     cursor: pointer;
 }
 
-.userName-button::-webkit-details-marker {
+.userName-button::-webkit-details-marker,
+ .userName.notif-button::-webkit-details-marker {
     display: none;
 }
 
@@ -210,7 +235,7 @@ body {
 /* USER PROFILE MODAL */
 .userdetails {
     background-color: #FFFFFF;
-    box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.15);
     border-radius: 14px;
     position: absolute;
     right: 13px;
@@ -226,6 +251,7 @@ body {
     /* gap: 3px; */
     border: 2px solid #F7F7F7;
     color: #475467;
+    z-index: 50;
 }
 
 .userName-button1 {
@@ -282,6 +308,10 @@ body {
     align-self: stretch;
 }
 
+.stores a > li {
+    color: #616161;
+}
+
 .settings {
     display: flex;
     flex-direction: column;
@@ -292,10 +322,8 @@ body {
 
 .navigation-setting {
     display: flex;
-    /* width: 100%; */
     align-items: center;
     align-self: stretch;
-    /* justify-content: space-around; */
     gap: 6px;
     padding: 5px;
     flex-direction: column;
@@ -303,11 +331,19 @@ body {
     border-bottom: 1px solid #EBEBEB;
 }
 
-hr {
-    color: 2px solid #616161;
-}
+.navigation-setting a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-self: stretch;
+  }
 
-.options {
+  .navigation-setting li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+.options, .options1 {
     display: flex;
     padding: 6px;
     align-items: center;
@@ -316,10 +352,108 @@ hr {
     width: 100%;
 }
 
-.options h5 {
+.options h5, .options1 h5 {
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
 }
 
+.account-setting {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    gap: 6px;
+    padding: 5px;
+    flex-direction: column;
+}
 
+.account-setting a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-self: stretch;
+  }
+
+  .account-setting li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+.options1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.options1 h5 {
+    font-weight: 600;
+}
+
+.options1 p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+
+
+    /* MAIN BODY */
+.mainBody {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.trialCallout {
+    display: flex;
+    width: 50%;
+    padding: 12px 8px 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C181D;
+    color: #E3E3E3;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.trialCallout h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: auto;
+}
+
+.trialButton {
+    margin-left: auto;
+    margin-right: 35px;
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--White, #FFF);
+    box-shadow: 0px 0px 0px 0px #B5B5B5 inset;
+    cursor: pointer;
+}
+
+.trialButton:hover {
+    box-shadow: 0px 0px 1px 1px #B5B5B5;
+    font-weight: 500;
+}
+
+.cancel {
+    display: flex;
+    position: absolute;
+    background-color: #1C181D;
+    border: none;
+    right: 10px;
+    cursor: pointer;
+    /* margin-left: auto; */
+}
+
+.cancel svg {
+    width: 23px;
+    height: 23px;
+}

@@ -10,8 +10,14 @@
   </head>
   <body>
 
+
+    <!--  -->
+    <!-- NAVIGATION/NAV BAR -->
+    <!--  -->
+
   <div class="navigation">
     <div class="icon">
+      <a href="http://shopify.com">
         <div class="logo">
           <svg fill="none" height="30" viewBox="0 0 105 30" width="105" xmlns="http://www.w3.org/2000/svg"><g fill="#fff">
             <path d="m36.2171 16.6517c-.8931-.4953-1.3631-.8962-1.3631-1.4622 0-.7311.6345-1.1792 1.6452-1.1792 1.1751 0 
@@ -38,6 +44,9 @@
             1.8332 2.14612-.423.11792-.8931.25942-1.4101.42451z"/><path d="m18.3086 29.1747 7.3798-1.8395s-3.1728-21.53194-3.1963-21.67344c-.0235-.14151-.1411-.23584-.2586-.23584s-2.1857-.04717-2.1857-.04717-1.2692-1.22635-1.7392-1.69802z"/></g>
           </svg>
         </div>
+      </a>
+        
+      <a href="http://shopify.com">
         <div class="logo-mobile">
           <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Shopify.com svg"><g id="Group"><g id="Group_2">
             <path id="Vector" d="M21.2105 3.80402C21.2105 3.80402 20.8505 3.90683 20.259 4.08675C20.1561 3.75261 20.0018 3.36707 19.7961 2.95583C19.1274 1.67069 
@@ -56,6 +65,7 @@
             5.96306 23.988 5.91165 23.988 5.91165C23.988 5.91165 22.5993 4.57511 22.085 4.06105V31.8458Z" fill="white"/></g></g></g>
           </svg>
         </div>
+      </a>
     </div>
 
     <div class="search-box">
@@ -121,14 +131,16 @@
         </details>
 
         <div class="user">
-          <div class="userName">
-            <h4>Davii Collections</h4>
-          </div>
-
           <details>
-            <summary type="button" class="userName-button">
-              DC
+            <summary class="nameofStore">
+              <div class="userName">
+                <h4>Davii Collections</h4>
+              </div>
+              <div class="userName-button">
+                DC
+              </div>
             </summary>
+            
 
             <div class="userdetails">
               <div class="top">
@@ -168,38 +180,102 @@
                     7 11.75 7.33579 11.75 7.75V8.25C11.75 8.94036 11.1904 9.5 10.5 9.5C9.80964 9.5 9.25 8.94036 9.25 8.25V7.75C9.25 
                     7.33579 8.91421 7 8.5 7C8.08579 7 7.75 7.33579 7.75 7.75V8.25C7.75 8.94036 7.19036 9.5 6.5 9.5Z" fill="#322F33"/>
                   </svg>
-                  <p>All stores</p>
+                  <a href="http://admin.shopify.com">
+                    <li>All stores</li>
+                  </a>
+                  
                 </div>
               </div>
 
               <div class="settings">
-                <div class="navigation-setting">
-                  <div class="options">
-                    <h5>Help Center</h5>
-                  </div>
-                  <div class="options">
-                    <h5>Changelog</h5>
-                  </div>
-                  <div class="options">
-                    <h5>Community forums</h5>
-                  </div>
-                  <div class="options">
-                    <h5>Hire a Shopify Partner</h5>
-                  </div>
-                  <div class="options">
-                    <h5>Keyboard shortcuts</h5>
-                  </div>
-                </div>
-
-                <div class="account-setting">
+                <ul class="navigation-setting">
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Help Center</h5>
+                    </li>
+                  </a>
                   
-                </div>
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Changelog</h5>
+                    </li>
+                  </a>
+                  
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Community forums</h5>
+                    </li>
+                  </a>
+                  
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Hire a Shopify Partner</h5>
+                    </li>
+                  </a>
+                  
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Keyboard shortcuts</h5>
+                    </li>
+                  </a>
+                  
+                </ul>
+
+                <ul class="account-setting">
+                  <a href="http://admin.shopify.com">
+                    <li class="options1">
+                      <h5>David Micheal</h5>
+                      <p>davidmicheal@gmail.com</p>
+                    </li>
+                  </a>
+                  
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Manage account</h5>
+                    </li>
+                  </a>
+                  
+                  <a href="http://admin.shopify.com">
+                    <li class="options">
+                      <h5>Log out</h5>
+                    </li>
+                  </a>
+                </ul>
               </div>
             </div>
 
           </details>
         </div>
     </div>
+    
+  </div>
+
+
+  <!--  -->
+  <!-- BODY -->
+  <!--  -->
+  <div class="mainBody">
+      <div class="trialCallout">
+          <h4>Extend your trial for $1/month for 3 months on select plans</h4>
+          <a href="http://shopify.com/pricing">
+            <button class="trialButton">Select a plan</button>
+          </a>
+        
+        <button class="cancel" onclick="cancelTrialCallout()">
+          <svg width="41" height="40" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.4697 15.0303C14.7626 15.3232 15.2374 15.3232 15.5303 15.0303C15.8232 14.7374 
+            15.8232 14.2626 15.5303 13.9697L11.5607 10L15.5303 6.03033C15.8232 5.73744 15.8232 5.26256 
+            15.5303 4.96967C15.2374 4.67678 14.7626 4.67678 14.4697 4.96967L10.5 8.93934L6.53033 4.96967C6.23744 
+            4.67678 5.76256 4.67678 5.46967 4.96967C5.17678 5.26256 5.17678 5.73744 5.46967 6.03033L9.43934 
+            10L5.46967 13.9697C5.17678 14.2626 5.17678 14.7374 5.46967 15.0303C5.76256 15.3232 6.23744 15.3232 
+            6.53033 15.0303L10.5 11.0607L14.4697 15.0303Z" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="setupGuide accordion">
+        
+      </div>
     
   </div>
 

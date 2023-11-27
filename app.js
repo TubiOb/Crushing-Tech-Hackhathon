@@ -205,7 +205,7 @@ accordionContent.forEach((item, index) => {
 
     if (index === currentOpenIndex) {
         item.classList.add('open');
-        contentBody.style.height = '150px';
+        contentBody.style.height = '180px';
         // accordionContent.style.backgroundColor = '#F7F7F7'
     }
     else {
@@ -219,7 +219,7 @@ accordionContent.forEach((item, index) => {
             currentAccordion.querySelector('.segment-body').style.height = '0px'
 
             item.classList.add('open');
-            contentBody.style.height = '150px';
+            contentBody.style.height = '180px';
             // console.log(currentAccordion);
             // accordionContent.style.backgroundColor = '#F7F7F7'
 
@@ -227,7 +227,7 @@ accordionContent.forEach((item, index) => {
         }
         else {
             item.classList.toggle('open');
-            contentBody.style.header = item.classList.contains('open') ? '150px' : '0px';
+            contentBody.style.header = item.classList.contains('open') ? '180px' : '0px';
             // console.log(currentAccordion);
             // accordionContent.style.backgroundColor = item.classList.contains('open') ? '#F7F7F7' : 'transparent';
         }

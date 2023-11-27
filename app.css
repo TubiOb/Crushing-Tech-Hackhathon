@@ -765,93 +765,6 @@ input[type="checkbox"] {
     display: none;
 }
 
-
-
-/* #mycheckbox + label,
-#myProductcheckbox + label,
-#myDomaincheckbox + label,
-#myStoreNamecheckbox + label,
-#myPaymentcheckbox + label {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: static;
-}
-
-#mycheckbox + label svg,
-#myProductcheckbox + label svg,
-#myDomaincheckbox + label svg,
-#myStoreNamecheckbox + label svg,
-#myPaymentcheckbox + label svg {
-    object-fit: cover;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-#mycheckbox + label svg:last-child,
-#myProductcheckbox + label svg:last-child,
-#myDomaincheckbox + label svg:last-child,
-#myStoreNamecheckbox + label svg:last-child,
-#myPaymentcheckbox + label svg:last-child {
-    display: none;
-}
-
-#mycheckbox:checked + label svg:last-child,
-#myProductcheckbox:checked + label svg:last-child,
-#myDomaincheckbox:checked + label svg:last-child,
-#myStoreNamecheckbox:checked + label svg:last-child,
-#myPaymentcheckbox:checked + label svg:last-child {
-    display: inline-flex;
-    transition: opacity 2s;
-}
-
-#mycheckbox + label svg:first-child,
-#myProductcheckbox + label svg:first-child,
-#myDomaincheckbox + label svg:first-child,
-#myStoreNamecheckbox + label svg:first-child,
-#myPaymentcheckbox + label svg:first-child {
-    display: inline-flex;
-    transition: opacity 0.2s ease-in-out, stroke-dasharray .5s ease-in-out;
-}
-
-#mycheckbox:hover + label svg:first-child,
-#myProductcheckbox:hover + label svg:first-child,
-#myDomaincheckbox:hover + label svg:first-child,
-#myStoreNamecheckbox:hover + label svg:first-child,
-#myPaymentcheckbox:hover + label svg:first-child
- {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 40;
-    stroke-width: 0;
-}
-
-#mycheckbox + label svg:nth-child(2),
-#myProductcheckbox + label svg:nth-child(2),
-#myDomaincheckbox + label svg:nth-child(2),
-#myStoreNamecheckbox + label svg:nth-child(2),
-#myPaymentcheckbox + label svg:nth-child(2) {
-    display: inline-flex;
-    animation: rotateAnimation .9s 0.2s ease-in-out;
-}
-
-@keyframes rotateAnimation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-#mycheckbox,
-#myProductcheckbox,
-#myDomaincheckbox,
-#myStoreNamecheckbox,
-#myPaymentcheckbox {
-    display: none;
-} */
-
 .segment-head h4 {
     font-size: 14px;
     font-weight: 600;
@@ -950,9 +863,226 @@ input[type="checkbox"] {
     object-fit: cover;
 }
 
+@media screen and (max-width: 1024px) {
+    .trialCallout, .setupGuide {
+        width: 80%;
+        border-radius: 10px;
+    }
+}
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 768px) {
+    .navigation {
+        padding: 10px 8px;
+    }
+
+    .logo-mobile, .logo {
+        cursor: pointer;
+    }
+
+    .logo-mobile {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .search-box {
+        width: 55%;
+    }
+
+    .search-button svg {
+        height: 1em;
+        width: 1em;
+    }
+
+    .notif-button {
+        font-size: 12px;
+        width: 28px;
+        height: 28px;
+        padding: 5px 4px;
+    }
+
+    .notif-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .notif-modal,
+    .userdetails {
+        width: 95%;
+    }
+
+    .modal-control svg,
+    .modal-check svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .notif-info {
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        gap: 8px;
+        background-color: #F1F1F1;
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .user {
+        padding: 0;
+        border: none;
+    }
+
+    .nameofStore {
+        padding: 0;
+        gap: 0;
+        border: #000;
+    }
+
+    .trialCallout, .setupGuide {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .trialCallout {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .trialButton {
+        margin-top: auto;
+    }
+
+    .cancel {
+        margin-left: auto;
+        top: 17px;
+        right: 1px;
+    }
+
+    .setupGuide + p, .setupGuide + h4 {
+        font-size: 12px;
+    }
+
     .right {
         display: none;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    .navigation {
+        padding: 10px 8px;
+    }
+
+    .logo-mobile, .logo {
+        cursor: pointer;
+    }
+
+    .logo-mobile {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .search-box {
+        width: 55%;
+    }
+
+    .search-button svg {
+        height: 1em;
+        width: 1em;
+    }
+
+    .notif-button {
+        font-size: 12px;
+        width: 28px;
+        height: 28px;
+        padding: 5px 4px;
+    }
+
+    .notif-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .notif-modal,
+    .userdetails {
+        width: 95%;
+    }
+
+    .modal-control svg,
+    .modal-check svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .notif-info {
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        gap: 8px;
+        background-color: #F1F1F1;
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .user {
+        padding: 0;
+        border: none;
+    }
+
+    .nameofStore {
+        padding: 0;
+        gap: 0;
+        border: #000;
+    }
+
+    .trialCallout, .setupGuide {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .trialCallout {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .trialButton {
+        margin-top: auto;
+    }
+
+    .cancel {
+        margin-left: auto;
+        top: 17px;
+        right: 1px;
+    }
+
+    .setupGuide + p, .setupGuide + h4 {
+        font-size: 12px;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .segment-body button {
+        font-size: 12px;
+    }
+    
+    .segment-body p {
+        font-size: 12px;
     }
 }

@@ -9,110 +9,153 @@ function cancelTrialCallout() {
 
 
 // 
-// document.addEventListener('DOMContentLoaded', function () {
-//   // Select all elements with the class "segment-head"
-//   const segmentHeads = document.querySelectorAll('.segment-head svg');
+// const checkbox = document.querySelector('#mycheckbox'),
+// Productbox = document.querySelector('#myProductcheckbox'),
+// Domainbox = document.querySelector('#myDomaincheckbox'),
+// StoreNamebox = document.querySelector('#myStoreNamecheckbox'),
+// Paymentbox = document.querySelector('#myPaymentcheckbox');
+// const label = document.querySelector('label');
 
-//   // Define the SVGs
-//   const initialSVG = `
-//     <circle cx="16" cy="16" r="12" stroke="#616161" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
-//   `;
+// checkbox.addEventListener('change', function() {
+//     const svg1 = label.querySelector('svg:first-child');
+//     const svg2 = label.querySelector('svg:nth-child(2)');
 
-//   const intermediateSVG = `
-//     <path
-//       d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 
-//       11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 
-//       11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-//       stroke="#000"
-//       stroke-width="2.5"
-//       stroke-linecap="round"
-//       stroke-linejoin="round"
-//     />
-//   `;
-
-//   const checkedSVG = `
-//     <circle cx="12" cy="12" r="12" fill="#000"></circle>
-//     <path
-//       d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 
-//       13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 
-//       8.13577 16.8833 8.13577 17.2738 8.52629Z"
-//       fill="#fff"
-//     ></path>
-//   `;
-
-//   // Helper function to handle hover animation
-//   function handleHoverAnimation(svgElement) {
-//     svgElement.innerHTML = intermediateSVG;
-//     void svgElement.offsetWidth;
-//     svgElement.style.transition = 'transform 0.2s ease-in-out';
-//     svgElement.style.transform = 'rotate(360deg)';
-//   }
-
-//   // Helper function to reset hover animation
-//   function resetHoverAnimation(svgElement) {
-//     svgElement.style.transition = '';
-//     svgElement.style.transform = '';
-//   }
-
-// //   // Helper function to handle click event
-// //   function handleClickAnimation(svgElement) {
-// //     // svgElement.innerHTML = checkedSVG;
-// //     const isIntermediate = svgElement.innerHTML === intermediateSVG;
-// //     svgElement.innerHTML = isIntermediate ? initialSVG : intermediateSVG;
-// //   }
-
-//     // Helper function to handle click event
-//     // let isOn = false;
-//     function handleClickAnimation(svgElement) {
-//         // isOn = !isOn;
-
-//       const isInitial = svgElement.innerHTML === initialSVG;
-//     svgElement.innerHTML = isInitial ? checkedSVG : initialSVG;
+//     if (checkbox.checked) {
+//     svg1.style.display = 'none';
+//     svg2.style.display = 'inline-flex';
+//     setTimeout(() => {
+//         svg2.style.display = 'none';
+//         svg1.style.display = 'none';
+//     }, 3);
+//     } else {
+//     svg2.style.display = 'none';
+//     svg1.style.display = 'inline-flex';
 //     }
-
-
-//   // Iterate over each segment head
-//   segmentHeads.forEach((svgElement) => {
-//     svgElement.addEventListener('mouseenter', function () {
-//     //   const svgElement = segmentHead.querySelector('svg');
-//       handleHoverAnimation(svgElement);
-//     });
-
-//     svgElement.addEventListener('mouseleave', function () {
-//     //   const svgElement = segmentHead.querySelector('svg');
-//       resetHoverAnimation(svgElement);
-//     });
-
-    
-//     svgElement.addEventListener('click', function () {
-//     //   const svgElement = segmentHead.querySelector('svg');
-//       handleClickAnimation(svgElement);
-//     });
-//   });
 // });
 
 
 
-const checkbox = document.querySelector('#mycheckbox');
-    const label = document.querySelector('label');
 
-    checkbox.addEventListener('change', function() {
-      const svg1 = label.querySelector('svg:first-child');
-      const svg2 = label.querySelector('svg:nth-child(2)');
 
-      if (checkbox.checked) {
+
+// CHECKING AND UNCHECKING THE CHECKBOXES
+const checkboxes = document.querySelectorAll('.accordion input[type="checkbox"]');
+const label = document.querySelector('label');
+
+// Function to handle checkbox change
+function handleCheckboxChange(checkbox) {
+    const svg1 = checkbox.nextElementSibling.querySelector('svg:first-child');
+    const svg2 = checkbox.nextElementSibling.querySelector('svg:nth-child(2)');
+    const svg3 = checkbox.nextElementSibling.querySelector('svg:last-child');
+    if (checkbox.checked) {
         svg1.style.display = 'none';
-        svg2.style.display = 'inline-block';
+        // svg2.style.display = 'inline-flex';
+        svg2.style.opacity = '1';
         setTimeout(() => {
-          svg2.style.display = 'block';
-          svg1.style.display = 'none';
-          svg2.style.display = 'none';
-        }, 3);
-      } else {
+            // svg3.style.display = 'none'
+            svg1.style.display = 'none';
+            svg2.style.opacity = '0';
+        }, 2000);
+    } else {
         svg2.style.display = 'none';
-        svg1.style.display = 'inline-block';
-      }
+        svg1.style.display = 'inline-flex';
+        
+    }
+}
+
+// Attach the event listener to each checkbox
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', function () {
+        handleCheckboxChange(checkbox);
     });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Productbox.addEventListener('change', function() {
+//     const svg1 = label.querySelector('svg:first-child');
+//     const svg2 = label.querySelector('svg:nth-child(2)');
+
+//     if (Productbox.checked) {
+//     svg1.style.display = 'none';
+//     svg2.style.display = 'inline-flex';
+//     setTimeout(() => {
+//         svg2.style.display = 'none';
+//         svg1.style.display = 'none';
+//     }, 3);
+//     } else {
+//     svg2.style.display = 'none';
+//     svg1.style.display = 'inline-flex';
+//     }
+// });
+
+// Domainbox.addEventListener('change', function() {
+//     const svg1 = label.querySelector('svg:first-child');
+//     const svg2 = label.querySelector('svg:nth-child(2)');
+
+//     if (Domainbox.checked) {
+//     svg1.style.display = 'none';
+//     svg2.style.display = 'inline-flex';
+//     setTimeout(() => {
+//         svg2.style.display = 'none';
+//         svg1.style.display = 'none';
+//     }, 3);
+//     } else {
+//     svg2.style.display = 'none';
+//     svg1.style.display = 'inline-flex';
+//     }
+// });
+
+// StoreNamebox.addEventListener('change', function() {
+//     const svg1 = label.querySelector('svg:first-child');
+//     const svg2 = label.querySelector('svg:nth-child(2)');
+
+//     if (StoreNamebox.checked) {
+//     svg1.style.display = 'none';
+//     svg2.style.display = 'inline-flex';
+//     setTimeout(() => {
+//         svg2.style.display = 'none';
+//         svg1.style.display = 'none';
+//     }, 3);
+//     } else {
+//     svg2.style.display = 'none';
+//     svg1.style.display = 'inline-flex';
+//     }
+// });
+
+// Paymentbox.addEventListener('change', function() {
+//     const svg1 = label.querySelector('svg:first-child');
+//     const svg2 = label.querySelector('svg:nth-child(2)');
+
+//     if (Paymentbox.checked) {
+//     svg1.style.display = 'none';
+//     svg2.style.display = 'inline-flex';
+//     setTimeout(() => {
+//         svg2.style.display = 'none';
+//         svg1.style.display = 'none';
+//     }, 3);
+//     } else {
+//     svg2.style.display = 'none';
+//     svg1.style.display = 'inline-flex';
+//     }
+// });
+
+
+
 
 
 
@@ -190,3 +233,45 @@ accordionContent.forEach((item, index) => {
         }
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      let progress = 0;
+
+      function updateProgress() {
+        const progressDisplay = document.querySelector('.details span');
+        const progressBar = document.querySelector('.progress-bar');
+        progressDisplay.textContent = `${progress} / ${checkboxes.length}`;
+
+        const percentage = (progress / checkboxes.length) * 100;
+        progressBar.style.width = `${percentage}%`;
+      }
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          if (this.checked) {
+            progress++;
+          } else {
+            progress--;
+          }
+
+          progress = Math.max(0, Math.min(progress, checkboxes.length));
+          updateProgress();
+        });
+      });
+
+      updateProgress();
+    });

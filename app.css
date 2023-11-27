@@ -605,6 +605,30 @@ li {
     align-items: stretch;
 }
 
+.progress {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-self: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.progress-bar-container {
+    width: 10%;
+    height: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #322F33;
+    transition: width 0.3s ease;
+}
+
 
     /* ACCORDION */
 
@@ -661,38 +685,154 @@ li {
     align-self: stretch;
     display: flex;
     align-items: center;
+    /* flex-direction: row; */
     gap: 8px;
     min-height: 30px;
     padding: 0 15px;
     cursor: pointer;
 }
 
-.segment-head svg {
+
+
+
+input[type="checkbox"] + label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: static;
+}
+
+input[type="checkbox"] + label svg {
+    object-fit: cover;
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 
-#mycheckbox + label svg:last-child {
+input[type="checkbox"] + label svg:last-child {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s linear;
+    transition-delay: 1s;
+}
+
+input[type="checkbox"]:checked + label svg:last-child {
+    display: inline-flex;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+input[type="checkbox"] + label svg:first-child {
+    display: inline-flex;
+    transition: opacity 0.2s ease-in-out, stroke-dasharray .5s ease-in-out;
+    position: relative;
+}
+
+input[type="checkbox"]:hover + label svg:first-child {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 40;
+    stroke-width: 0;
+}
+
+input[type="checkbox"] + label svg:nth-child(2) {
     display: none;
 }
 
-#mycheckbox:checked + label svg:last-child {
-    display: inline-block;
+input[type="checkbox"]:checked + label svg:nth-child(2) {
+    display: inline-flex;
+    animation: rotateAnimation .3s linear 0.6s;
+    position: absolute;
 }
 
-#mycheckbox + label svg:first-child {
-    display: inline-block;
+/* input[type="checkbox"]:checked + label svg:nth-child(2)::after {
+    display: none;
+    animation: rotateAnimation .9s linear 0.6s;
+    position: absolute;
+} */
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
 }
 
-#mycheckbox + label svg:nth-child(2) {
+input[type="checkbox"] {
     display: none;
 }
 
-#mycheckbox + label:hover svg:nth-child(2) {
-    display: block;
-    animation: rotateAnimation .9s linear infinite;
-    transition: 0.1s ease-in-out;
+
+
+/* #mycheckbox + label,
+#myProductcheckbox + label,
+#myDomaincheckbox + label,
+#myStoreNamecheckbox + label,
+#myPaymentcheckbox + label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: static;
+}
+
+#mycheckbox + label svg,
+#myProductcheckbox + label svg,
+#myDomaincheckbox + label svg,
+#myStoreNamecheckbox + label svg,
+#myPaymentcheckbox + label svg {
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#mycheckbox + label svg:last-child,
+#myProductcheckbox + label svg:last-child,
+#myDomaincheckbox + label svg:last-child,
+#myStoreNamecheckbox + label svg:last-child,
+#myPaymentcheckbox + label svg:last-child {
+    display: none;
+}
+
+#mycheckbox:checked + label svg:last-child,
+#myProductcheckbox:checked + label svg:last-child,
+#myDomaincheckbox:checked + label svg:last-child,
+#myStoreNamecheckbox:checked + label svg:last-child,
+#myPaymentcheckbox:checked + label svg:last-child {
+    display: inline-flex;
+    transition: opacity 2s;
+}
+
+#mycheckbox + label svg:first-child,
+#myProductcheckbox + label svg:first-child,
+#myDomaincheckbox + label svg:first-child,
+#myStoreNamecheckbox + label svg:first-child,
+#myPaymentcheckbox + label svg:first-child {
+    display: inline-flex;
+    transition: opacity 0.2s ease-in-out, stroke-dasharray .5s ease-in-out;
+}
+
+#mycheckbox:hover + label svg:first-child,
+#myProductcheckbox:hover + label svg:first-child,
+#myDomaincheckbox:hover + label svg:first-child,
+#myStoreNamecheckbox:hover + label svg:first-child,
+#myPaymentcheckbox:hover + label svg:first-child
+ {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 40;
+    stroke-width: 0;
+}
+
+#mycheckbox + label svg:nth-child(2),
+#myProductcheckbox + label svg:nth-child(2),
+#myDomaincheckbox + label svg:nth-child(2),
+#myStoreNamecheckbox + label svg:nth-child(2),
+#myPaymentcheckbox + label svg:nth-child(2) {
+    display: inline-flex;
+    animation: rotateAnimation .9s 0.2s ease-in-out;
 }
 
 @keyframes rotateAnimation {
@@ -704,19 +844,13 @@ li {
     }
   }
 
-/* .mycheckbox +label svg:hover :nth-child(2) {
-    display: inline-block;
-    opacity: 0;
-    transition:  opacity 3ms;
-}
-
-.mycheckbox:checked + label:hover svg:nth-child(2) {
-    opacity: 1;
-} */
-
-#mycheckbox {
+#mycheckbox,
+#myProductcheckbox,
+#myDomaincheckbox,
+#myStoreNamecheckbox,
+#myPaymentcheckbox {
     display: none;
-}
+} */
 
 .segment-head h4 {
     font-size: 14px;

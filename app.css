@@ -76,9 +76,13 @@ li {
     border: 2px solid #F7F7F7;
 }
 
-/* .search-box:focus {
-    border: 3px solid #F0F0F0;
-} */
+.search-box:focus-within {
+    border: 3px solid #F7F7F7;
+}
+
+.search::-webkit-search-cancel-button {
+    display: none;
+}
 
 .search {
     background-color: transparent;
@@ -88,7 +92,7 @@ li {
     width: 100%;
     text-decoration: none;
     padding: 1px;
-    
+    appearance: none;
 }
 
 .notif_user {
@@ -98,25 +102,39 @@ li {
     justify-content: space-between;
 }
 
+
+    /* NOTIFICATION BUTTON */
+
+.notification {
+    display: flex;
+    align-items: center;
+}
+
 .notif-button {
     background-color: #322F33;
     border: none;
     border-radius: 8px;
     padding: 5px;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
     list-style-type: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .notif-button:hover {
     background-color: #616161;
 }
 
+.notif-button:focus {
+    outline: 3px solid #005BD3;
+}
+
 .notif-button svg {
     fill: #B5B5B5;
-    height: 23px;
-    width: 23px;
+    height: 25px;
+    width: 25px;
     flex-shrink: 0;
 }
 
@@ -211,6 +229,10 @@ li {
 
 .user:hover {
     background-color: #616161;
+}
+
+.user:focus-within {
+    outline: 3px solid #005BD3;
 }
 
 .nameofStore {
@@ -585,15 +607,54 @@ li {
 
 
     /* ACCORDION */
-.customize-segment {
-    display: flex;
+
+.accordion {
+    display: none;
     align-items: center;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 5px;
+    overflow: hidden;
+    max-height: 450px;
+    transition: max-height 0.3s ease;
+}
+
+.open.accordion {
+    display: flex;
+}
+
+.accordion-content {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.accordion-content.open .customize-segment,
+.accordion-content.open .product-segment,
+.accordion-content.open .domain-segment,
+.accordion-content.open .storeName-segment,
+.accordion-content.open .payment-segment {
+    background-color: #F7F7F7;
+    border-radius: 8px;
+}
+
+.accordion-content + p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+
+.customize-segment,
+.product-segment, .domain-segment,
+.storeName-segment, .payment-segment {
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    background-color: #F1F1F1;
     padding: 8px;
     border-radius: 12px;
-    margin-top: 8px;
+    gap: 10px;
+    /* overflow: hidden; */
 }
 
 .segment-head {
@@ -601,19 +662,76 @@ li {
     display: flex;
     align-items: center;
     gap: 8px;
+    min-height: 30px;
+    padding: 0 15px;
+    cursor: pointer;
 }
 
 .segment-head svg {
     width: 25px;
     height: 25px;
+    cursor: pointer;
+}
+
+#mycheckbox + label svg:last-child {
+    display: none;
+}
+
+#mycheckbox:checked + label svg:last-child {
+    display: inline-block;
+}
+
+#mycheckbox + label svg:first-child {
+    display: inline-block;
+}
+
+#mycheckbox + label svg:nth-child(2) {
+    display: none;
+}
+
+#mycheckbox + label:hover svg:nth-child(2) {
+    display: block;
+    animation: rotateAnimation .9s linear infinite;
+    transition: 0.1s ease-in-out;
+}
+
+@keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+/* .mycheckbox +label svg:hover :nth-child(2) {
+    display: inline-block;
+    opacity: 0;
+    transition:  opacity 3ms;
+}
+
+.mycheckbox:checked + label:hover svg:nth-child(2) {
+    opacity: 1;
+} */
+
+#mycheckbox {
+    display: none;
+}
+
+.segment-head h4 {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .segment-body {
     display: flex;
     flex-direction: row;
-    padding: 8px 30px;
-    /* align-items: flex-start; */
+    padding: 0px 30px;
+    align-items: flex-start;
     justify-content: center;
+    height: 0;
+    overflow: hidden;
+    transition: all .2s linear;
 }
 
 .left p {
@@ -629,7 +747,11 @@ li {
     gap: 10px;
 }
 
-.customize-button {
+.customize-button,
+.addProduct-button,
+.domain-button,
+.storeName-button,
+.payment-button  {
     display: flex;
     padding: 9px 12px;
     align-items: center;
@@ -637,13 +759,66 @@ li {
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     background: var(--White, #616161);
-    box-shadow: 0px 1px 0px 0px #B5B5B5 inset;
+    /* box-shadow: 0px 1px 0px 0px #B5B5B5 inset; */
+    /* box-shadow: 0px 1px 0px 0px #333, 0px 2px 0px 2px #000 inset; */
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
     cursor: pointer;
     color: #FFFFFF;
 }
 
+.customize-button:hover,
+.addProduct-button:hover,
+.domain-button:hover,
+.storeName-button:hover,
+.payment-button:hover {
+    background: #322F33;
+    /* box-shadow: 0px 0px 0px 1.5px #333, 1px 0px 2px 0px #000 inset; */
+    /* box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset; */
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+}
+
+.customize-button:focus,
+.addProduct-button:focus,
+.domain-button:focus,
+.storeName-button:focus,
+.payment-button:focus {
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+}
+
+.button-divs {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.importProduct-button {
+    display: flex;
+    padding: 10px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.importProduct-button:hover {
+    background-color: #EBEBEB;
+}
+
+.right {
+    align-items: center;
+    display: flex;
+}
+
 .right img {
     object-fit: cover;
-    width: fit-content;
-    height: fit-content;
+}
+
+
+@media screen and (max-width: 460px) {
+    .right {
+        display: none;
+    }
 }
